@@ -2,7 +2,6 @@ import styles from "./array-element.module.css"
 
 const ArrayElement = ({value, colorFactor}) => {
     const colorVal = 3.14*((value/70)+2*colorFactor);
-    console.log(colorFactor);
     return ( 
         <div className={styles.element} style={{height: value+ "vh",
         //Generates Gradient for colors 
