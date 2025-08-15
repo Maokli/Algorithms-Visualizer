@@ -2,6 +2,7 @@ import './App.css';
 import {SelectionSort} from './algorithms/selection-sort';
 import { useState } from 'react';
 import AlgorithmVisualizer from './components/algorithm-visualizer/algorithm-visualizer';
+import { BullSort } from './algorithms/bull-sort';
 
 function App() {
   const [colorFactor, setColorFactor] = useState(Math.random());
@@ -11,7 +12,7 @@ function App() {
 
   const genData = () => {
     setStart(false);
-    const data = Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+    const data = Array.from({length: 10}, () => Math.floor(Math.random() * 40));
     setArray(data);
     setColorFactor(Math.random());
   }
@@ -24,7 +25,7 @@ function App() {
     <div>
       <button onClick={genData}>GenerateData</button>
       <button onClick={startVisualization}>Start</button>
-      <AlgorithmVisualizer array={array} algorithmFunction={SelectionSort} start={start} colorFactor={colorFactor}/>
+      <AlgorithmVisualizer array={array} algorithmFunction={BullSort} start={start} colorFactor={colorFactor}/>
     </div>
   );
 }

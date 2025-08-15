@@ -22,7 +22,7 @@ const AlgorithmVisualizer = ({array, algorithmFunction, start, colorFactor}) => 
                 sequences.map((el,index) => <VisualizationBoard count={sequences.length} colorFactor={colorFactor} key={index} array={el} startIndex={index}/>)
             }
             {
-                !start && <VisualizationBoard count={sequences.length} colorFactor={colorFactor} array={array} startIndex={array.length-1}/>
+                (!start || !executionDone) && <VisualizationBoard count={sequences.length} colorFactor={colorFactor} array={array} startIndex={array.length-1}/>
             }
         </>
      );
