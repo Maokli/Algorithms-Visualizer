@@ -2,12 +2,12 @@ import ArrayElement from '../array-element/array-element';
 import styles from './visualization-board.module.css'
 import { useState } from 'react';
 
-const VisualizationBoard = ({array, startIndex, colorFactor}) => {
-    const index = array.length - startIndex;
+const VisualizationBoard = ({array, count, startIndex, colorFactor}) => {
+    const index = count - startIndex;
     const [display, setDisplay] = useState("flex")
-
+    
     setTimeout(()=> {
-        setDisplay(startIndex === array.length-1 ? "flex": "none");
+        setDisplay(startIndex === count-1 ? "flex": "none");
     },startIndex*200)
 
     return ( 
